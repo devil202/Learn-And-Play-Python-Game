@@ -1,0 +1,23 @@
+from Tkinter import *
+top=Tk()
+root=Tk()
+top.withdraw()
+v=StringVar()
+l=IntVar()
+def start():
+    root.withdraw()
+    top.deiconify()
+    entry=Entry(top,textvariable=v)
+    entry.pack()
+    entry1=Entry(top,textvariable=l)
+    entry1.pack()
+    v.set("hj")
+    l.set("hello")
+    b=Button(top,text="click me",command=lambda:x(entry,entry1))
+    b.pack()
+def x(entry,entry1):
+    v=entry.get()
+    print int(v)
+b=Button(root,text="click me",command=lambda:start())
+b.pack()
+mainloop()
